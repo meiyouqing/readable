@@ -1,0 +1,47 @@
+.g-home{padding: 0 20px;}
+.posts-list{margin-top: 20px;}
+.sort-post{margin-right: 20px;}
+.sort-post b{margin-left: 10px;cursor: pointer;color: #999;display: inline-block;padding: 0 10px;}
+.sort-post.voteScore .sort-vote,
+.sort-post.timestamp .sort-time{cursor: default;color: #333;border:1px solid #CCC;}
+
+.posts-list .create-link{color: lightseagreen;display: inline-block;}
+.posts-list ul {margin-top: 20px;}
+.posts-list li{margin-bottom: 20px;}
+.post-info a,
+.post-info span{display: inline-block;vertical-align: middle;margin-right: 10px;}
+.post-info span{color: #999;}
+.vote-score{position: relative;padding-left: 45px;}
+.vote-score i{position: absolute;width: 0;height: 0;border-style: solid;border-width: 7px;cursor: pointer;}
+.vote-score i.up-vote{top: 0;left: 8px;border-color: transparent transparent #999;}
+.vote-score i.down-vote{bottom: 0;left: 25px;border-color: #999 transparent transparent;}
+.vote-score i.up-vote:hover{border-color: transparent transparent #333;}
+.vote-score i.down-vote:hover{border-color: #333 transparent transparent;}
+
+.g-edit,
+.g-category,
+.g-post{position: absolute;z-index: 100;top: 0;bottom: 0;left: 0;right: 0;padding: 0 20px;background: white;}
+.g-edit{padding: 50px;background: transparent;}
+
+.g-edit .g-mask{position: absolute;z-index: 100;top: 0;bottom: 0;left: 0;right: 0;background: rgba(255, 255, 255, .8);}
+.g-edit .edit-wrap{position: relative;z-index: 101;max-width: 800px;height: 100%;padding: 20px;box-sizing: border-box;box-shadow: 1px 1px 7px #CCC;margin: 0 auto;background: white;}
+.g-edit input,
+.g-edit textarea{border: 1px solid #DDD;width: 100%;line-height: 30px;padding: 0 10px;box-sizing: border-box;}
+.g-edit label{margin-right: 10px;line-height: 40px;}
+.g-edit textarea{min-height: 500px;}
+.g-edit .warning{color: red;}
+
+.g-post .post-info,
+.g-post h1{text-align: center;}
+.g-post .total-comments{display: inline-block;margin-right: 20px;}
+.g-post .post-content{margin:50px;}
+.g-post .post-comments dt span{display: inline-block;vertical-align: middle;margin-right: 10px;color: #999;}
+.g-post .post-comments dd textarea,
+.g-post .post-comments dd button{padding:5px 10px;margin-right: 10px;display: inline-block;vertical-align: bottom;}
+.g-post .create-comment input,
+.g-post .create-comment textarea,
+.g-post .create-comment button{display: inline-block;margin-right: 10px;vertical-align: bottom;}
+
+.g-nav{height:40px;line-height:40px;font-size: 18px;border-bottom: 1px solid #CCC;}
+.g-nav span{display: inline-block;margin-right: 20px;}
+.g-nav .go-back{color: lightseagreen;font-size: 18px;}
