@@ -87,6 +87,7 @@ class Edit extends Component {
             <p><textarea id="body" name="body" data-note="bodyNote" placeholder="body" onChange={this.handleChange} value={ body }></textarea></p>
             <p className={"warning" + (bodyNote? '' : ' hide')}>{ bodyNote }</p>
             <p><button type="submit">submit</button></p>
+            <p><button onClick={history.goBack} type="button">cancle</button></p>
           </form>
         </div>
       </div>

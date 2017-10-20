@@ -45,3 +45,5 @@
 .g-nav{height:40px;line-height:40px;font-size: 18px;border-bottom: 1px solid #CCC;}
 .g-nav span{display: inline-block;margin-right: 20px;}
 .g-nav .go-back{color: lightseagreen;font-size: 18px;}
+
+.g-err-note{text-align: center; margin-top: 100px;}

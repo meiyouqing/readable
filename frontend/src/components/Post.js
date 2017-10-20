@@ -43,7 +43,7 @@ class Post extends Component {
   render() {
     const { post, comments, history, commentsSortMethod, vote, voteUpComment, updateComment, deleteComment, deletePost, setCommentsSortMethod } = this.props;
 
-    if (!post) return <div></div>
+    if (!post.id) return <div className="g-err-note">Sorry, this post does not exist!<br/><a href="javscript:void(0)" onClick={history.goBack} className="go-back">&lt; back</a></div>
 
     return (
       <div className="g-post">

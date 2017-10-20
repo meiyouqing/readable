@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setPostsSortMethod, votePost } from '../actions';
 
-class Postlist extends Component {
-  render() {
-    const { posts, postsSortMethod, setPostsSortMethod, vote } = this.props;
+const Postlist = ({ posts, postsSortMethod, setPostsSortMethod, vote }) => {
     return (
       <div className="posts-list">
         <h2>POSTS</h2>
@@ -41,7 +39,6 @@ class Postlist extends Component {
         </ul>
       </div>
     );
-  }
 }
 
 const mapStateToProps = ({ postsSortMethod }) => ({
