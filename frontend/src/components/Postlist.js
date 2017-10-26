@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { setPostsSortMethod, votePost } from '../actions';
+import { setPostsSortMethod, votePost, deletePost } from '../actions';
 
-const Postlist = ({ posts, postsSortMethod, setPostsSortMethod, vote }) => {
+const Postlist = ({ posts, postsSortMethod, setPostsSortMethod, vote, deletePost }) => {
     return (
       <div className="posts-list">
         <h2>POSTS</h2>
@@ -26,11 +26,14 @@ const Postlist = ({ posts, postsSortMethod, setPostsSortMethod, vote }) => {
                     <span className="category">{post.category}</span>
                     <span className="author">{post.author}</span>
                     <span className="time">{new Date(post.timestamp).toLocaleDateString()}</span>
+                    <span>{post.commentsAmount ? post.commentsAmount : 0} comments</span>
                     <span className="vote-score">
                       <i className="up-vote" onClick={() => { vote(post.id, 'upVote'); }} />
                       <i className="down-vote" onClick={() => { vote(post.id, 'downVote'); }} />
                       {post.voteScore}
                     </span>
+                    <Link to={`/edit/${post.id}`} className="comment-edit f-pointer"><img alt="readable" src="/icons/edit.svg" /></Link>
+                    <span className="comment-delete f-pointer" onClick={() => { deletePost(post.id) } }><img alt="readable" src="/icons/delete.svg" /></span>
                   </p>
                   <p className="brief">{post.body.substr(0, 100)}</p>
                 </li>
@@ -47,5 +50,6 @@ const mapStateToProps = ({ postsSortMethod }) => ({
 const mapDispatchToProps = dispatch => ({
   setPostsSortMethod: method => dispatch(setPostsSortMethod(method)),
   vote: (id, option) => dispatch(votePost(id, option)),
+  deletePost: (id) => dispatch(deletePost(id)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Postlist);

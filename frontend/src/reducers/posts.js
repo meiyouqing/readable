@@ -10,12 +10,24 @@ const allPosts = (state = {}, action) => {
       return {
         ...allPosts,
       };
+    case constants.GET_COMMENTS:
+      const comments = {};
+      action.comments.forEach((comment) => {
+        comment.id && (comments[comment.id] = comment);
+      });
+      return {
+        ...state,
+        [action.id]:{
+          ...state[action.id],
+          commentsAmount: action.comments.length,
+        }
+      };
     case constants.ADD_POST:
       return {
         ...state,
         [action.post.id]: {
           ...action.post,
-          voteScore: 0,
+          voteScore: 1,
           deleted: false,
         },
       };

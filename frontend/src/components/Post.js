@@ -41,7 +41,7 @@ class Post extends Component {
     this.setState({ addComment: false, comTextValue:'' })
   }
   render() {
-    const { post, comments, history, commentsSortMethod, vote, voteUpComment, updateComment, deleteComment, deletePost, setCommentsSortMethod } = this.props;
+    const { post, comments, history, commentsSortMethod, vote, voteUpComment, deleteComment, deletePost, setCommentsSortMethod } = this.props;
 
     if (!post.id) return <div className="g-err-note">Sorry, this post does not exist!<br/><a href="javscript:void(0)" onClick={history.goBack} className="go-back">&lt; back</a></div>
 
@@ -75,7 +75,7 @@ class Post extends Component {
               <b className="sort-time" onClick={setCommentsSortMethod.bind(null, 'timestamp')}>time</b>
             </span>
             <span className="total-comments">total: { comments.length } comments</span>
-            <a href="javascript:void(0)" className="create-link" onClick={() => {this.setState({addComment: true})}}>Create a new comment</a>
+            <a className="create-link" onClick={() => {this.setState({addComment: true})}}>Create a new comment</a>
           </p>
           {
             this.state.addComment && (

@@ -5,7 +5,7 @@
 .sort-post.voteScore .sort-vote,
 .sort-post.timestamp .sort-time{cursor: default;color: #333;border:1px solid #CCC;}
 
-.posts-list .create-link{color: lightseagreen;display: inline-block;}
+.create-link{color: lightseagreen !important;display: inline-block;text-decoration:underline;cursor: pointer;}
 .posts-list ul {margin-top: 20px;}
 .posts-list li{margin-bottom: 20px;}
 .post-info a,

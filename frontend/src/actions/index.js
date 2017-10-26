@@ -11,10 +11,15 @@ export const setCommentsSortMethod = commentsSortMethod => ({
 });
 export const getAllPosts = () => (dispatch) => {
   api.getAllPosts()
-    .then(allPosts => dispatch({
+    .then(allPosts => {
+      dispatch({
       type: constants.GET_ALLPOSTS,
       allPosts,
-    }));
+    })
+    allPosts.forEach(post => {
+      dispatch(getComments(post.id))
+    })
+  });
 };
 export const getPosts = category => (dispatch) => {
   api.getPosts(category)
@@ -35,6 +40,7 @@ export const getComments = id => (dispatch) => {
     .then(comments => dispatch({
       type: constants.GET_COMMENTS,
       comments,
+      id,
     }));
 };
 export const getComment = id => (dispatch) => {
